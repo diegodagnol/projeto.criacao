@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sous Chef Secreto — Criação Digital · Portfólio</title>
+  <meta name="description" content="Narrativa interativa em Twine ambientada no universo culinário. Projeto de Hipermídia de Diego Martins.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"/>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-cd">JUJUBA</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <nav class="main-nav">
+        <a href="projetos.html" class="nav-link active">Projetos</a>
+        <a href="disciplinas.html" class="nav-link">Disciplinas</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+        <div class="header-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="search" placeholder="Buscar projetos…" aria-label="Buscar projetos">
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container project-detail">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="index.html">Início</a> <span>/</span>
+      <a href="projetos.html">Projetos</a> <span>/</span>
+      <span id="pd-breadcrumb-titulo">Projeto</span>
+    </nav>
+
+    <!-- Hero do projeto -->
+    <div class="project-hero">
+      <img id="pd-hero-img" src="" alt="">
+      <div class="project-hero-overlay"></div>
+      <div class="project-hero-content">
+        <span id="pd-badge" class="card-tipo-badge"></span>
+        <h1 id="pd-titulo"></h1>
+      </div>
+    </div>
+
+    <!-- Layout 65 / 35 -->
+    <div class="project-layout">
+      <!-- COLUNA PRINCIPAL -->
+      <div class="project-main">
+        <section class="project-block">
+          <h2>Sobre o projeto</h2>
+          <hr class="grad-line">
+          <div id="pd-descricao"></div>
+        </section>
+
+        <!-- Galeria — Fancybox -->
+        <section class="project-block" id="pd-galeria-section">
+          <h2>Galeria</h2>
+          <hr class="grad-line">
+          <div class="gallery-grid" id="pd-galeria"></div>
+        </section>
+
+        <!-- Vídeo -->
+        <section class="project-block" id="pd-video-section">
+          <h2>Vídeo de apresentação</h2>
+          <hr class="grad-line">
+          <div class="video-wrap">
+            <iframe id="pd-video" src="" title="Vídeo de apresentação" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </section>
+
+        <!-- Nota de processo (áudio) -->
+        <section class="project-block">
+          <h2>Nota de processo</h2>
+          <hr class="grad-line">
+          <div class="card audio-note">
+            <div class="audio-note-head">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></svg>
+              <span>O aluno gravou uma nota sobre o processo criativo deste projeto.</span>
+            </div>
+            <audio controls>
+              <source src="audio/nota-processo.mp3" type="audio/mpeg">
+              Seu navegador não suporta o elemento de áudio.
+            </audio>
+          </div>
+        </section>
+      </div>
+
+      <!-- COLUNA LATERAL -->
+      <aside class="project-sidebar">
+        <div class="card meta-card">
+          <h3>Ficha técnica</h3>
+          <div class="meta-row">
+            <span class="meta-label">Aluno</span>
+            <span class="meta-value meta-author">
+              <img id="pd-aluno-img" src="" alt="">
+              <span id="pd-aluno-nome"></span>
+            </span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Disciplina</span>
+            <a class="meta-value" id="pd-disciplina" href="#"></a>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Semestre</span>
+            <a class="meta-value" id="pd-semestre" href="#"></a>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Tipo</span>
+            <span class="meta-value" id="pd-tipo"></span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Orientador</span>
+            <span class="meta-value" id="pd-orientador"></span>
+          </div>
+        </div>
+
+        <div class="card sidebar-block">
+          <h3>Tags</h3>
+          <div class="tag-list" id="pd-tags"></div>
+        </div>
+
+        <div class="card sidebar-block">
+          <h3>Compartilhar</h3>
+          <button class="btn btn-primary btn-block" id="btn-share">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
+            Copiar link
+          </button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Projetos relacionados — Swiper -->
+    <section class="section-sm">
+      <h2 class="section-title" id="pd-rel-titulo">Mais projetos</h2>
+      <hr class="grad-line">
+      <div class="swiper" id="related-swiper">
+        <div class="swiper-wrapper" id="pd-rel-wrapper"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo">
+            <span class="logo-cd">JUJUBA</span>
+          </a>
+          <p>Memória institucional viva do curso de Criação Digital da Universidade de Caxias do Sul. Artes, Comunicação e Tecnologia.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="disciplinas.html">Disciplinas</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Créditos</h4>
+          <ul>
+            <li><a href="sobre.html">Equipe do projeto</a></li>
+            <li><a href="sobre.html">Regras de submissão</a></li>
+            <li><a href="https://www.ucs.br" target="_blank" rel="noopener">UCS</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Criação Digital · UCS. Projeto Hipermídia.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

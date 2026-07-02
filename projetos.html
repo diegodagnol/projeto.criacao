@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acervo de Projetos — Criação Digital · Portfólio</title>
+  <meta name="description" content="Acervo completo de projetos do curso de Criação Digital da UCS. Filtre por disciplina, semestre e tipo de mídia.">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"/>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-cd">JUJUBA</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <nav class="main-nav">
+        <a href="projetos.html" class="nav-link active">Projetos</a>
+        <a href="disciplinas.html" class="nav-link">Disciplinas</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+        <div class="header-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="search" placeholder="Buscar projetos…" aria-label="Buscar projetos">
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== FILTROS ===================== -->
+  <div class="filter-bar">
+    <div class="container filter-row">
+      <select class="field" id="filter-disciplina" aria-label="Filtrar por disciplina">
+        <option value="">Todas as disciplinas</option>
+        <option value="Projeto Temático">Projeto Temático</option>
+        <option value="Hipermídia">Hipermídia</option>
+        <option value="Motion Design">Motion Design</option>
+        <option value="Fotografia Aplicada">Fotografia Aplicada</option>
+        <option value="Narrativa Digital">Narrativa Digital</option>
+        <option value="Game Design">Game Design</option>
+        <option value="Modelagem e Animação">Modelagem e Animação</option>
+        <option value="Produção Audiovisual">Produção Audiovisual</option>
+        <option value="Arte Computacional">Arte Computacional</option>
+      </select>
+
+      <select class="field" id="filter-semestre" aria-label="Filtrar por semestre">
+        <option value="">Todos os semestres</option>
+        <option value="2024/2">2024/2</option>
+        <option value="2024/1">2024/1</option>
+        <option value="2023/2">2023/2</option>
+        <option value="2023/1">2023/1</option>
+      </select>
+
+      <select class="field" id="filter-tipo" aria-label="Filtrar por tipo de mídia">
+        <option value="">Todos os tipos</option>
+        <option value="Web / Hipermídia">Web / Hipermídia</option>
+        <option value="Vídeo / Motion">Vídeo / Motion</option>
+        <option value="Fotografia / Imagem">Fotografia / Imagem</option>
+        <option value="Design Gráfico">Design Gráfico</option>
+        <option value="Narrativa / Ficção">Narrativa / Ficção</option>
+        <option value="Jogo">Jogo</option>
+        <option value="Áudio">Áudio</option>
+        <option value="App / Software">App / Software</option>
+        <option value="Modelagem / Animação">Modelagem / Animação 3D</option>
+      </select>
+
+      <input type="search" class="field search-field" id="filter-busca" placeholder="Buscar por título, aluno…" aria-label="Buscar por texto">
+      <button class="btn btn-secondary" id="btn-limpar">Limpar filtros</button>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- Contador + ordenação -->
+    <div class="results-bar">
+      <span class="results-count" id="results-count">Mostrando 16 de 16 projetos</span>
+      <div class="sort-wrap">
+        <label for="sort-projects">Ordenar:</label>
+        <select class="field" id="sort-projects">
+          <option value="recentes">Mais recentes</option>
+          <option value="antigos">Mais antigos</option>
+          <option value="az">A–Z</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Grid de cards -->
+    <div class="projects-grid" id="projects-grid">
+      <!-- Cards montados por render.js a partir de dados.js -->
+    </div>
+
+    <!-- Estado vazio -->
+    <div class="empty-state" id="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M8 11h6"/></svg>
+      <h3>Nenhum projeto encontrado</h3>
+      <p>Tente ajustar ou limpar os filtros para ver mais resultados.</p>
+      <button class="btn btn-primary" onclick="document.getElementById('btn-limpar').click()">Limpar filtros</button>
+    </div>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo">
+            <span class="logo-cd">JUJUBA</span>
+          </a>
+          <p>Memória institucional viva do curso de Criação Digital da Universidade de Caxias do Sul. Artes, Comunicação e Tecnologia.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="disciplinas.html">Disciplinas</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Créditos</h4>
+          <ul>
+            <li><a href="sobre.html">Equipe do projeto</a></li>
+            <li><a href="sobre.html">Regras de submissão</a></li>
+            <li><a href="https://www.ucs.br" target="_blank" rel="noopener">UCS</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2025 Criação Digital · UCS. Projeto Hipermídia.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>
