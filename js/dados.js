@@ -291,6 +291,62 @@ const PROJETOS = [
       "O projeto une design de interface, gamificação e visualização de dados ambientais."
     ],
     galeria: [161, 162, 163, 164]
+  },
+    ,
+{
+    id: "17",
+    titulo: "Patty Wagon (Siri Móvel)",
+    alunos: "Eduardo Pintos",
+    disciplina: "Modelagem e Animação",
+    semestre: "2023/2",
+    tipo: "Modelagem / Animação",
+    seed: 170,
+    imgLocal: true,   // usa img/projetos/17/  (pattywagon1.jpg, pattywagon2.jpg, pattywagon3.jpg)
+    capa: "img/projetos/17/pattywagon1.jpg",
+    tags: ["3D", "Modelagem", "Animação"],
+    orientador: "Prof. Dr. Marcelo Luís Fardo",
+    descricao: [
+      "Reconstrução tridimensional do Patty Wagon (Sirí Móvel), o icônico veículo-lanche do universo de Bob Esponja, desenvolvida como exercício de modelagem e animação 3D.",
+      "O projeto trabalha topologia, texturização e composição de elementos característicos do design original: como as rodas, a bandeirola e os detalhes de carroceria."
+    ],
+    galeria: ["img/projetos/17/pattywagon2.jpg", "img/projetos/17/pattywagon3.jpg"]
+  },
+  {
+    id: "18",
+    titulo: "Sonhando com a Terra-Média",
+    alunos: "Eduardo Pintos",
+    disciplina: "Narrativa Digital",
+    semestre: "2026/1",
+    tipo: "Narrativa / Ficção",
+    seed: 180,
+    imgLocal: true, // usa img/projetos/18/  (loft1.png, loft2.png, loft3.png)
+    capa: "img/projetos/18/loft1.png",
+    tags: ["Twine", "Ficção", "Comédia", "Ramificado"],
+    orientador: "Profa. Dra. Elisa Boff",
+    descricao: [
+      "Narrativa interativa em Twine que reimagina, em tom de comédia, os bastidores de uma jornada épica inspirada no universo de fantasia de Senhor dos Anéis. O jogador acompanha decisões absurdas da trama.",
+      "O projeto explora hipertexto ramificado, com múltiplos caminhos que dependem das escolhas do leitor, trabalhando estrutura de nós, variáveis de estado e coerência narrativa entre passagens."
+    ],
+    galeria: ["img/projetos/18/loft2.png", "img/projetos/18/loft3.png"]
+  },
+  {
+    id: "19",
+    titulo: "Messenera",
+    alunos: "Eduardo Pintos",
+    disciplina: "Game Design",
+    semestre: "2026/1",
+    tipo: "Jogo",
+    seed: 190,
+    imgLocal: true, // usa img/projetos/19/  (messenera1.png, messenera2.png, messenera3.png)
+    capa: "img/projetos/19/messenera1.png",
+    tags: ["Unity", "Pixel Art", "Filosofia", "Narrativa"],
+    orientador: "Prof. Dr. Marcelo Luis Fardo",
+    descricao: [
+      "Messenera é um jogo de aventura narrativa em pixel art no qual o jogador assume o papel de um mensageiro que precisa decidir entre entregar, ler ou reter uma carta lacrada. Cada escolha reverbera no destino dos habitantes de uma cidade isolada.",
+      "O sistema central calcula um perfil ético dinâmico com base em três correntes filosóficas: o dever kantiano, o utilitarismo de Stuart Mill e a ética das virtudes de Aristóteles, culminando em um julgamento final que revela o alinhamento moral construído ao longo da jornada.",
+      "Desenvolvido em Unity, com arte em pixel art 32x32 feita em Aseprite, o projeto foi produzido como Trabalho de Conclusão de Curso (TCC)."
+    ],
+    galeria: ["img/projetos/19/messenera2.png", "img/projetos/19/messenera3.png", "img/projetos/19/messenera4.png"]
   }
 ];
 
