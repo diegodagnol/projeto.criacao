@@ -155,6 +155,6 @@ audios: [
 
 ## 👥 Créditos
 
-Projeto desenvolvido para a disciplina de **Hipermídia** do curso de Criação Digital da **UCS**.
+Projeto desenvolvido por Diego Luiz Dall'Agnol, Eduardo Da Rosa Pintos e Pedro Henrique Galvão para a disciplina de **Hipermídia** do curso de Criação Digital da **UCS**.
 
-© 2025 Criação Digital · UCS.
+
