@@ -555,6 +555,14 @@ select.field {
 }
 .project-main h2 { font-size: 1.4rem; margin-top: 8px; }
 .project-main p { color: var(--text-secondary); margin-bottom: 16px; }
+/* Links dentro da descrição do projeto */
+#pd-descricao a {
+  color: var(--accent-violet);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+#pd-descricao a:hover { color: var(--accent-pink); }
 .project-block { margin-bottom: 48px; }
 .video-wrap {
   position: relative;

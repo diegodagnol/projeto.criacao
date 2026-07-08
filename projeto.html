@@ -78,20 +78,11 @@
           </div>
         </section>
 
-        <!-- Nota de processo (áudio) -->
-        <section class="project-block">
-          <h2>Nota de processo</h2>
+        <!-- Áudio — renderizado por render.js a partir de p.audios -->
+        <section class="project-block" id="pd-audio-section">
+          <h2>Áudio</h2>
           <hr class="grad-line">
-          <div class="card audio-note">
-            <div class="audio-note-head">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></svg>
-              <span>O aluno gravou uma nota sobre o processo criativo deste projeto.</span>
-            </div>
-            <audio controls>
-              <source src="audio/nota-processo.mp3" type="audio/mpeg">
-              Seu navegador não suporta o elemento de áudio.
-            </audio>
-          </div>
+          <div id="pd-audios"></div>
         </section>
       </div>
 

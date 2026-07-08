@@ -9,7 +9,7 @@
    Campos:
      id          → string única, usada na URL: projeto.html?id=01
      titulo      → nome do projeto
-     alunos      → autor(es), texto livre
+     alunos      → autor(es): texto ("A, B") ou lista (["A", "B"])
      disciplina  → deve bater com uma opção do filtro em projetos.html
      semestre    → "AAAA/S"  (ex.: "2024/2")
      tipo        → deve bater com uma opção do filtro (define a cor do badge)
@@ -17,6 +17,8 @@
      tags        → lista de etiquetas curtas
      orientador  → nome do professor (opcional)
      video       → ID do YouTube (opcional; sem isso, a seção some)
+     audios      → lista de áudios (opcional; sem isso, a seção some).
+                   Cada item: { src: "audios/...mp3", title: "Nome" } ou string
      descricao   → lista de parágrafos (opcional)
      galeria     → lista de imagens da galeria (opcional). Cada item pode ser
                    um seed picsum (número) OU um caminho local (string).
@@ -38,29 +40,33 @@ const PROJETOS = [
     imgLocal: true,   // usa img/projetos/01/  (capa.jpg, 1.jpg…4.jpg, aluno.jpg); cai no picsum se faltar
     tags: ["Hipermídia", "Interativo", "Mapa", "Web"],
     orientador: "Prof. Dr. Elisa Boff",
-    video: "dQw4w9WgXcQ",
     descricao: [
       "A ideia do Explócus nasceu da percepção de que muitos estudantes, sobretudo os ingressantes, conhecem apenas uma fração dos espaços do campus da Universidade de Caxias do Sul. Blocos, laboratórios, biblioteca e espaços de convivência frequentemente passam despercebidos durante toda a graduação. A motivação central foi, portanto, transformar esse problema de orientação espacial em uma experiência lúdica: e se a descoberta do campus pudesse ser tão envolvente quanto um jogo de exploração? A partir dessa pergunta, discutiu-se como aliar três elementos para a hipermídia: mapa interativo, conteúdo multimídia e participação ativa do usuário.",
       "Como referências diretas, observaram-se hipermídias e aplicativos que já exploram a relação entre espaço físico e interação digital. O Pokémon GO (Niantic) e o Ingress demonstraram o potencial dos jogos baseados em localização para deslocar pessoas pelo mundo real; o Foursquare/Swarm popularizou a mecânica de check-in como forma de registrar presença em lugares; e o Geocaching mostrou como coordenadas geográficas podem virar uma caça ao tesouro colaborativa. A discussão convergiu para um objetivo claro: criar não um jogo de fantasia sobreposto ao mapa, mas uma ferramenta de descoberta real do campus, em que cada local visitado revela informação institucional relevante.",
       "O objetivo da hipermídia é incentivar a exploração presencial do campus da UCS por meio de uma experiência interativa e gamificada. O Explócus busca comunicar os espaços universitários, convertendo cada ponto de interesse em um “checkpoint” que só libera seu conteúdo (textos, imagens e vídeos) quando o usuário efetivamente chega ao local. O conceito é o de um “passaporte digital do campus”: a interatividade foi explorada na geolocalização em tempo real, no check-in dependente de proximidade física, no desbloqueio progressivo de conteúdo, no ranking entre exploradores e em microinterações (animações, som e vibração) que dão feedback imediato a cada conquista."
+      ,"Veja o projeto ao vivo em <a href='https://explocus.onrender.com' target='_blank' rel='noopener'>explocus.onrender.com</a>"
     ],
-    galeria: [11, 12, 13, 14]
+    galeria: ["img/projetos/01/1.jpg", "img/projetos/01/2.jpg", "img/projetos/01/3.jpg", "img/projetos/01/4.jpg"]
   },
   {
     id: "02",
     titulo: "O Bosque Não Esquece",
-    alunos: "Ana Luiza Farias",
-    disciplina: "Projeto Temático",
-    semestre: "2024/2",
+    alunos: ["Diego Luiz Dall Agnol", "Eduardo Da Rosa Pintos", "Pedro Henrique Galvão"],
+    disciplina: "Hipermídia",
+    semestre: "2026/2",
     tipo: "Áudio",
     seed: 20,
     tags: ["Áudio", "Imersivo"],
-    orientador: "Profa. Dra. Cláudia Reinaldo",
+    orientador: "Profa. Dra. Elisa Boff",
     descricao: [
-      "Peça de áudio imersivo que reconstrói, a partir de paisagens sonoras, a memória de uma mata em processo de desaparecimento. O ouvinte percorre o bosque guiado apenas pelo som.",
-      "O trabalho investiga a escuta como forma de registro documental e afetivo, articulando gravações de campo, foley e composição espacial."
+      "A atividade de Hiperáudio é um projeto prático da disciplina de Criação em Hipermidia que propõe a produção de um produto sonoro narrativo — como um podcast ou radionovela — explorando a linguagem do áudio como meio expressivo autônomo. O aluno deve criar uma peça sonora baseada em notícia, ficção ou no uso de áudio em games e ambientes interativos, desenvolvendo roteiro, narração e, opcionalmente, trilha e efeitos sonoros.",
+      "O diferencial da proposta está na criação de duas versões do mesmo conteúdo: uma versão limpa, apenas com a fala, e outra com camadas sonoras adicionais — efeitos e/ou música. Esse exercício de comparação evidencia como o som não-verbal transforma a experiência narrativa, um conceito central na teoria do hiperáudio e das mídias interativas. Após a edição no Audacity, o trabalho é publicado em plataformas de podcast como o Spotify for Podcasters (Anchor.fm) ou o Podomatic, tornando o produto acessível como obra de comunicação digital real."
     ],
-    galeria: [21, 22, 23, 24]
+    imgLocal: true,
+    audios : [
+      { src: "audios/projetos/02/bosque_nao_esquece-narracao.mp3", title: "O Bosque Não Esquece" },
+      { src: "audios/projetos/02/bosque_nao_esquece-completo.mp3", title: "O Bosque Não Esquece (Completo)" }
+    ]
   },
   {
     id: "03",
@@ -114,19 +120,20 @@ const PROJETOS = [
   },
   {
     id: "06",
-    titulo: "Retratos do Bairro",
-    alunos: "Fernanda Dias, Lucas Mendes",
-    disciplina: "Fotografia Aplicada",
+    titulo: "Ensaio Final: Caxias dupla exposta",
+    alunos: "Diego Luiz Dall Agnol",
+    disciplina: "Fotografia",
     semestre: "2024/1",
     tipo: "Fotografia / Imagem",
-    seed: 60,
     tags: ["Fotografia", "Ensaio"],
-    orientador: "Prof. Me. Otávio Bertoluci",
+    orientador: "Prof. Me. Gustavo Luiz Pozza",
+    imgLocal: true,
     descricao: [
-      "Ensaio fotográfico documental sobre os moradores de um bairro histórico de Caxias do Sul, retratados em seus ambientes cotidianos.",
-      "A série valoriza a luz natural e o retrato ambiental como ferramentas de construção de identidade coletiva."
+      "Ensaio fotografico como atividade final da disciplina de fotografia do curso de Criação Digital da Universidade de Caxias do Sul.",
+      "O ensaio explora a técnica de dupla exposição, combinando imagens de paisagens urbanas de Caxias do Sul do passado e do presente."
+      
     ],
-    galeria: [61, 62, 63, 64]
+    galeria: ["img/projetos/06/1.png", "img/projetos/06/2.png", "img/projetos/06/3.png", "img/projetos/06/4.png", "img/projetos/06/5.png"]
   },
   {
     id: "07",
@@ -228,72 +235,71 @@ const PROJETOS = [
   },
   {
     id: "13",
-    titulo: "Aquarela Generativa",
-    alunos: "Eduardo Campos",
-    disciplina: "Arte Computacional",
+    titulo: "Airboeing A720neo",
+    alunos: "Diego Luiz Dall Agnol",
+    disciplina: "Modelagem e Animação",
     semestre: "2024/2",
-    tipo: "Web / Hipermídia",
-    seed: 130,
-    tags: ["Generative", "Web"],
-    orientador: "Prof. Dr. Henrique Vasconcelos",
+    tipo: "Modelagem / Animação",
+    imgLocal: true,
+    tags: ["Modelagem", "Blender", "3D"],
+    orientador: "Prof. Dr. Marcelo Luís Fardo",
     descricao: [
-      "Peça de arte generativa em web que simula, com código, o comportamento de tintas de aquarela sobre papel.",
-      "Cada carregamento produz uma composição única, controlada por parâmetros aleatórios e regras de difusão."
+      "A mistura do Boeing 737 com o Airbus A320neo.",
+      "Trabalho como requisto para avaliação da tarefa final da disciplina de modelagem digital do curso de Criação Digital da Universidade de Caxias do Sul",
+      "O projeto foi desenvolvido no software Blender, utilizando técnicas de modelagem poligonal e texturização para criar um modelo 3D detalhado da aeronave.",
+      "O modelo pode ser acessado no <a href='https://sketchfab.com/3d-models/airboeing-a720neo-65af2dfda405426ea8f945f222e9e30b' target='_blank' rel='noopener'>Sketchfab</a>."
     ],
-    galeria: [131, 132, 133, 134]
+    galeria: ["img/projetos/13/1.jpg", "img/projetos/13/2.jpg"]
   },
   {
     id: "14",
-    titulo: "Frequência — Instalação Sonora Interativa",
-    alunos: "Larissa Pinto, Renata Moura",
-    disciplina: "Projeto Temático",
+    titulo: "Bomb Kick Party",
+    alunos: "Pedro Henrique Galvão",
+    disciplina: "Game Design",
     semestre: "2024/1",
-    tipo: "Áudio",
-    seed: 140,
-    tags: ["Instalação", "Áudio"],
-    orientador: "Profa. Dra. Cláudia Reinaldo",
+    tipo: "Jogo",
+    imgLocal: true,
+    tags: ["Game", "Design", "Boardgame"],
+    orientador: "Profa. Dra. Marcelo Luís Fardo",
     descricao: [
-      "Instalação em que a presença e o movimento do público alteram em tempo real a paisagem sonora do espaço.",
-      "O projeto usa sensores e síntese de áudio para transformar corpo em instrumento."
+      "Jogo de tabuleiro competitivo em que os jogadores controlam personagens que devem plantar bombas para eliminar adversários e conquistar territórios.",
+      "O projeto pode ser acessado na <a href='https://tabletopia.com/players/id3786199/k3eqkt' target='_blank' rel='noopener'>Tabletopia</a>."
     ],
-    galeria: [141, 142, 143, 144]
+    galeria: ["img/projetos/14/1.jpeg", "img/projetos/14/2.jpeg", "img/projetos/14/3.jpeg", "img/projetos/14/4.jpeg"]
   },
   {
     id: "15",
-    titulo: "Typografía Viva — Motion Typography",
-    alunos: "Vítor Santana",
+    titulo: "Sufoco - Director's Cut",
+    alunos: ["Pedro Henrique Galvão", "Willian Meurer", "Caio Cruz"],
     disciplina: "Motion Design",
     semestre: "2023/2",
     tipo: "Vídeo / Motion",
-    seed: 150,
-    tags: ["Tipografia", "Motion"],
-    orientador: "Prof. Me. Otávio Bertoluci",
-    video: "dQw4w9WgXcQ",
+    tags: ["Video", "Motion"],
+    orientador: "Prof. Juliano Trajano",
+    video: "2lTVmyxA3nU",
+    imgLocal: true,
     descricao: [
-      "Estudo de tipografia em movimento que dá vida a um poema por meio de ritmo, escala e transformação das letras.",
-      "O trabalho explora a palavra como imagem e como tempo."
+      "Um trabalho de Faculdade pra treinar as habilidades artísticas.",
+      "Versão do Diretor porque a original estava faltando alguns retoques finais."
     ],
-    galeria: [151, 152, 153, 154]
   },
   {
     id: "16",
-    titulo: "EcoTrack — App de Pegada Ambiental",
-    alunos: "Camila Brum",
+    titulo: "Animação - A Caverna (2024)",
+    alunos: ["Diego Luiz Dall Agnol", "Diego Campagnolo", "Gabriel Spironello"],
     disciplina: "Projeto Temático",
-    semestre: "2024/2",
-    tipo: "App / Software",
-    seed: 160,
-    tags: ["App", "Sustentabilidade"],
-    orientador: "Prof. Dr. Henrique Vasconcelos",
-    video: "dQw4w9WgXcQ",
+    semestre: "2024/4",
+    tipo: "Modelagem / Animação",
+    imgLocal: true, 
+    tags: ["Video", "Animação", "Modelagem 3D"],
+    orientador: "Prof. Dr. Marcelo Luís Fardo",
+    video: "yp3bz5hKeuY",
     descricao: [
-      "Protótipo de aplicativo que ajuda o usuário a medir e reduzir sua pegada de carbono no dia a dia.",
-      "O projeto une design de interface, gamificação e visualização de dados ambientais."
+      "\"Na caverna que você tem medo de entrar está o tesouro que você procura\" - Joseph Campbell.",
+      "Projeto de animação digital realizado pelos estudantes de Criação Digital Diego Luiz Dall´ Agnol, Diego Campagnolo e Gabriel Spironello Picolotto para a disciplina de Projeto Temático: Animação Digital."
     ],
-    galeria: [161, 162, 163, 164]
   },
-    ,
-{
+  {
     id: "17",
     titulo: "Patty Wagon (Siri Móvel)",
     alunos: "Eduardo Pintos",
@@ -301,15 +307,14 @@ const PROJETOS = [
     semestre: "2023/2",
     tipo: "Modelagem / Animação",
     seed: 170,
-    imgLocal: true,   // usa img/projetos/17/  (pattywagon1.jpg, pattywagon2.jpg, pattywagon3.jpg)
-    capa: "img/projetos/17/pattywagon1.jpg",
+    imgLocal: true,  
     tags: ["3D", "Modelagem", "Animação"],
     orientador: "Prof. Dr. Marcelo Luís Fardo",
     descricao: [
       "Reconstrução tridimensional do Patty Wagon (Sirí Móvel), o icônico veículo-lanche do universo de Bob Esponja, desenvolvida como exercício de modelagem e animação 3D.",
       "O projeto trabalha topologia, texturização e composição de elementos característicos do design original: como as rodas, a bandeirola e os detalhes de carroceria."
     ],
-    galeria: ["img/projetos/17/pattywagon2.jpg", "img/projetos/17/pattywagon3.jpg"]
+    galeria: ["img/projetos/17/1.jpg", "img/projetos/17/2.jpg", "img/projetos/17/3.jpg"]
   },
   {
     id: "18",
@@ -319,15 +324,14 @@ const PROJETOS = [
     semestre: "2026/1",
     tipo: "Narrativa / Ficção",
     seed: 180,
-    imgLocal: true, // usa img/projetos/18/  (loft1.png, loft2.png, loft3.png)
-    capa: "img/projetos/18/loft1.png",
+    imgLocal: true, 
     tags: ["Twine", "Ficção", "Comédia", "Ramificado"],
     orientador: "Profa. Dra. Elisa Boff",
     descricao: [
       "Narrativa interativa em Twine que reimagina, em tom de comédia, os bastidores de uma jornada épica inspirada no universo de fantasia de Senhor dos Anéis. O jogador acompanha decisões absurdas da trama.",
       "O projeto explora hipertexto ramificado, com múltiplos caminhos que dependem das escolhas do leitor, trabalhando estrutura de nós, variáveis de estado e coerência narrativa entre passagens."
     ],
-    galeria: ["img/projetos/18/loft2.png", "img/projetos/18/loft3.png"]
+    galeria: ["img/projetos/18/1.png", "img/projetos/18/2.png", "img/projetos/18/3.png"]
   },
   {
     id: "19",
@@ -336,9 +340,8 @@ const PROJETOS = [
     disciplina: "Game Design",
     semestre: "2026/1",
     tipo: "Jogo",
-    seed: 190,
-    imgLocal: true, // usa img/projetos/19/  (messenera1.png, messenera2.png, messenera3.png)
-    capa: "img/projetos/19/messenera1.png",
+
+    imgLocal: true, 
     tags: ["Unity", "Pixel Art", "Filosofia", "Narrativa"],
     orientador: "Prof. Dr. Marcelo Luis Fardo",
     descricao: [
@@ -346,7 +349,7 @@ const PROJETOS = [
       "O sistema central calcula um perfil ético dinâmico com base em três correntes filosóficas: o dever kantiano, o utilitarismo de Stuart Mill e a ética das virtudes de Aristóteles, culminando em um julgamento final que revela o alinhamento moral construído ao longo da jornada.",
       "Desenvolvido em Unity, com arte em pixel art 32x32 feita em Aseprite, o projeto foi produzido como Trabalho de Conclusão de Curso (TCC)."
     ],
-    galeria: ["img/projetos/19/messenera2.png", "img/projetos/19/messenera3.png", "img/projetos/19/messenera4.png"]
+    galeria: ["img/projetos/19/1.png", "img/projetos/19/2.png", "img/projetos/19/3.png", "img/projetos/19/4.png"]
   }
 ];
 

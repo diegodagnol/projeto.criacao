@@ -27,11 +27,15 @@
         p.capa ||
         (p.imgLocal ? `${IMG_DIR}/${p.id}/capa.jpg` : picHero(p.seed));
 
+    // alunos pode ser string ("A, B") ou lista (["A", "B"])
+    const alunosTexto = (p) =>
+        Array.isArray(p.alunos) ? p.alunos.join(", ") : p.alunos || "";
+
     // Texto de busca (usado pelos filtros em main.js)
     function textoBusca(p) {
         return [
             p.titulo,
-            p.alunos,
+            alunosTexto(p),
             p.disciplina,
             p.tipo,
             (p.tags || []).join(" "),
@@ -61,7 +65,7 @@
         </a>
         <div class="card-body">
           <h3 class="card-title">${p.titulo}</h3>
-          <p class="card-meta">${p.alunos} · ${p.disciplina} · ${p.semestre}</p>
+          <p class="card-meta">${alunosTexto(p)} · ${p.disciplina} · ${p.semestre}</p>
           <div class="card-tags">${tags}</div>
         </div>
       </article>`;
@@ -175,6 +179,30 @@
             videoSection.style.display = "none";
         }
 
+        // Áudio — cada item de p.audios pode ser { src, title } ou uma string.
+        // Sem áudios, a seção some.
+        const audioSection = detail.querySelector("#pd-audio-section");
+        const audios = detail.querySelector("#pd-audios");
+        const mic = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></svg>`;
+        if (audios && p.audios && p.audios.length) {
+            audios.innerHTML = p.audios
+                .map((a) => {
+                    const src = typeof a === "string" ? a : a.src;
+                    const title = (typeof a === "object" && a.title) || p.titulo;
+                    return `
+          <div class="card audio-note" style="margin-bottom:16px">
+            <div class="audio-note-head">${mic}<span>${title}</span></div>
+            <audio controls>
+              <source src="${src}" type="audio/mpeg">
+              Seu navegador não suporta o elemento de áudio.
+            </audio>
+          </div>`;
+                })
+                .join("");
+        } else if (audioSection) {
+            audioSection.style.display = "none";
+        }
+
         // Ficha técnica
         const aImg = detail.querySelector("#pd-aluno-img");
         if (aImg) {
@@ -182,13 +210,13 @@
             aImg.src =
                 p.alunoFoto ||
                 (p.imgLocal ? `${IMG_DIR}/${p.id}/aluno.jpg` : picAluno);
-            aImg.alt = p.alunos;
+            aImg.alt = alunosTexto(p);
             aImg.onerror = () => {
                 aImg.onerror = null;
                 aImg.src = picAluno;
             };
         }
-        set("#pd-aluno-nome", p.alunos);
+        set("#pd-aluno-nome", alunosTexto(p));
         const dLink = detail.querySelector("#pd-disciplina");
         if (dLink) {
             dLink.textContent = p.disciplina;
