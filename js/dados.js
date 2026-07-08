@@ -271,7 +271,7 @@ const PROJETOS = [
     id: "15",
     titulo: "Sufoco - Director's Cut",
     alunos: ["Pedro Henrique Galvão", "Willian Meurer", "Caio Cruz"],
-    disciplina: "Motion Design",
+    disciplina: "Produção Audiovisual",
     semestre: "2023/2",
     tipo: "Vídeo / Motion",
     tags: ["Video", "Motion"],
