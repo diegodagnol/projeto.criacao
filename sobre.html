@@ -37,31 +37,18 @@
   <main class="container">
     <!-- Hero -->
     <section class="page-hero">
-      <h1>Sobre o portfólio</h1>
+      <h1>Sobre o <span class="grad-text">JUJUBA</span></h1>
       <hr class="grad-line">
-      <p>Um repositório vivo dos projetos produzidos pelos alunos do curso de Criação Digital da UCS. Um espaço para consultar, aprender e se inspirar com o que já foi feito por aqui.</p>
+      <p>Produto hipermídia desenvolvido como Trabalho Final da disciplina de Projeto de Hipermídia do curso de Bacharelado em Criação Digital da Universidade de Caxias do Sul (UCS).</p>
     </section>
 
-    <!-- Como funciona -->
+    <!-- O projeto / Contexto -->
     <section class="section-sm">
-      <h2 class="section-title">Como funciona</h2>
+      <h2 class="section-title">O projeto</h2>
       <hr class="grad-line">
-      <div class="steps-grid">
-        <div class="card step-card" data-aos="fade-up">
-          <div class="step-num">01</div>
-          <h3>Projeto finalizado</h3>
-          <p>O aluno conclui o projeto na disciplina, com avaliação e entrega completa.</p>
-        </div>
-        <div class="card step-card" data-aos="fade-up">
-          <div class="step-num">02</div>
-          <h3>Curadoria</h3>
-          <p>A equipe seleciona e prepara o registro: textos, imagens, vídeo e créditos.</p>
-        </div>
-        <div class="card step-card" data-aos="fade-up">
-          <div class="step-num">03</div>
-          <h3>Publicado</h3>
-          <p>O projeto entra no repositório, disponível para todos acessarem e consultarem.</p>
-        </div>
+      <div class="prose">
+        <p>Ao longo do curso, cada aluno produz projetos completos e avaliados em disciplinas como Hipermídia, Fotografia, Modelagem 3D, Narrativa Digital e Game Design. Mas esses trabalhos costumam ficar restritos ao Ambiente Virtual de Aprendizagem (AVA) e se perdem de vista assim que a disciplina termina.</p>
+        <p>Não existe, hoje, um espaço comum onde um calouro possa ver o que os veteranos produziram, onde um professor possa indicar exemplos de referência, ou onde o próprio autor reúna seus trabalhos em um portfólio navegável. O <strong>JUJUBA</strong> nasce para preencher essa lacuna: um repositório hipermídia — construído em HTML, CSS e JavaScript — que funciona como <strong>memória institucional viva</strong> do curso de Criação Digital.</p>
       </div>
     </section>
 
@@ -74,60 +61,114 @@
       </blockquote>
     </section>
 
+    <!-- Tipo de hipermídia -->
+    <section class="section-sm">
+      <h2 class="section-title">Que tipo de hipermídia é?</h2>
+      <hr class="grad-line">
+      <div class="prose">
+        <p>O JUJUBA é um produto hipermídia predominantemente <strong>conceitual / curatorial</strong>, com forte componente informacional e documental. Ele não narra uma história, não ensina uma tarefa passo a passo e não se propõe como obra de expressão artística autoral — embora incorpore elementos de todos esses registros, já que os próprios projetos catalogados são, em grande parte, obras artísticas, narrativas ou instrucionais.</p>
+        <p>Seu papel é <strong>organizar e dar acesso não-linear</strong> a esse conjunto: o usuário entra por qualquer porta (busca, disciplina, destaque na home) e constrói seu próprio percurso de leitura pelo acervo — a marca definidora de um produto hipermídia curatorial (Gosciola, 2011).</p>
+      </div>
+    </section>
+
+    <!-- Nível de interatividade -->
+    <section class="section-sm">
+      <h2 class="section-title">Nível de interatividade</h2>
+      <hr class="grad-line">
+      <div class="prose" style="margin-bottom: 28px">
+        <p>Na classificação de Alex Primo (2008), a interatividade do JUJUBA é predominantemente <strong>reativa</strong>: o sistema responde a um conjunto pré-programado de estímulos do usuário, sem geração de conteúdo novo. Dentro desse regime, porém, oferece um alto grau de configuração pelo próprio usuário:</p>
+      </div>
+      <div class="info-grid">
+        <div class="card info-card" data-aos="fade-up">
+          <h3>Navegação não-linear</h3>
+          <p>Qualquer projeto é acessível por múltiplas portas de entrada: destaques, acervo completo, disciplina, tags do projeto e busca textual.</p>
+        </div>
+        <div class="card info-card" data-aos="fade-up">
+          <h3>Filtros + busca</h3>
+          <p>Disciplina, semestre e tipo de mídia são combináveis com a busca textual, atualizando o grid em tempo real, sem recarregar a página.</p>
+        </div>
+        <div class="card info-card" data-aos="fade-up">
+          <h3>Estado navegável por URL</h3>
+          <p>Os filtros aplicados e o projeto aberto ficam na URL: dá para copiar e compartilhar um link que já abre o site filtrado ou em um projeto específico.</p>
+        </div>
+        <div class="card info-card" data-aos="fade-up">
+          <h3>Microinterações</h3>
+          <p>Lightbox de galeria, vídeo e áudio sob demanda (sem autoplay), botão "Copiar link" com feedback (toast) e animações de entrada ao rolar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tecnologias -->
+    <section class="section-sm">
+      <h2 class="section-title">Tecnologias</h2>
+      <hr class="grad-line">
+      <div class="info-grid">
+        <div class="card info-card" data-aos="fade-up">
+          <h3>Software</h3>
+          <ul>
+            <li>HTML5 semântico e CSS3 vanilla com custom properties</li>
+            <li>JavaScript vanilla (ES6) em 4 arquivos: dados, render, main e animations</li>
+            <li>Fancybox 5, Swiper 11, GSAP 3 + ScrollTrigger e AOS (via CDN)</li>
+            <li>Google Fonts (Space Grotesk + Inter), embed do YouTube e &lt;audio&gt; nativo</li>
+            <li>Git e GitHub para versionamento e colaboração</li>
+          </ul>
+        </div>
+        <div class="card info-card" data-aos="fade-up">
+          <h3>Hardware</h3>
+          <ul>
+            <li>Site estático: sem back-end e sem banco de dados</li>
+            <li>Hospedável em qualquer servidor de arquivos estáticos, incluindo GitHub Pages</li>
+            <li>Desenvolvido nos computadores pessoais dos integrantes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como um projeto entra no acervo -->
+    <section class="section-sm">
+      <h2 class="section-title">Como um projeto entra no acervo</h2>
+      <hr class="grad-line">
+      <div class="steps-grid">
+        <div class="card step-card" data-aos="fade-up">
+          <div class="step-num">01</div>
+          <h3>Projeto finalizado</h3>
+          <p>O aluno conclui o projeto na disciplina, com avaliação e entrega completa.</p>
+        </div>
+        <div class="card step-card" data-aos="fade-up">
+          <div class="step-num">02</div>
+          <h3>Curadoria</h3>
+          <p>A equipe seleciona e prepara o registro: textos, imagens, vídeo, áudio e créditos.</p>
+        </div>
+        <div class="card step-card" data-aos="fade-up">
+          <div class="step-num">03</div>
+          <h3>Publicado</h3>
+          <p>O projeto entra no repositório, disponível para todos consultarem e se inspirarem.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Equipe -->
     <section class="section-sm">
       <h2 class="section-title">Equipe</h2>
       <hr class="grad-line">
       <div class="team-grid">
         <div class="card team-card" data-aos="fade-up">
-          <img src="https://picsum.photos/seed/301/80/80" alt="Diretor Criativo">
-          <div class="team-role">Diretor Criativo</div>
-          <h3>Marcelo Antunes</h3>
-          <p>Conceito e identidade visual</p>
+          <div class="team-role">Desenvolvimento & Protótipo</div>
+          <h3>Diego Luiz Dall'Agnol</h3>
+          <p>Código-base, estruturação do projeto, gestão do processo e publicação em ambiente de testes.</p>
         </div>
         <div class="card team-card" data-aos="fade-up">
-          <img src="https://picsum.photos/seed/302/80/80" alt="UX / Arquitetura de Informação">
-          <div class="team-role">UX / Arq. Informação</div>
-          <h3>Priscila Geremia</h3>
-          <p>Navegação e experiência</p>
+          <div class="team-role">Redação & Curadoria</div>
+          <h3>Eduardo da Rosa Pintos</h3>
+          <p>Redação do relatório, produção textual e curadoria de acervo para o protótipo.</p>
         </div>
         <div class="card team-card" data-aos="fade-up">
-          <img src="https://picsum.photos/seed/303/80/80" alt="Produtor de Conteúdo">
-          <div class="team-role">Produtor de Conteúdo</div>
-          <h3>Bruno Salaverry</h3>
-          <p>Curadoria e textos</p>
-        </div>
-        <div class="card team-card" data-aos="fade-up">
-          <img src="https://picsum.photos/seed/304/80/80" alt="Dev Front-end">
-          <div class="team-role">Dev Front-end</div>
-          <h3>Letícia Possamai</h3>
-          <p>HTML, CSS e JavaScript</p>
+          <div class="team-role">Fluxo de Telas & Curadoria</div>
+          <h3>Pedro Henrique Galvão</h3>
+          <p>Desenvolvimento do fluxo de telas e curadoria de acervo para o protótipo.</p>
         </div>
       </div>
-    </section>
-
-    <!-- Regras de submissão -->
-    <section class="section-sm">
-      <h2 class="section-title">Regras de submissão</h2>
-      <hr class="grad-line">
-      <ul class="rules-list">
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          O projeto deve ter sido avaliado e aprovado em uma disciplina do curso.
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          O aluno autoriza a publicação dos materiais no repositório.
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Conteúdo mínimo: título, descrição, imagem de capa e créditos.
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Projetos com vídeo, áudio ou demo interativa têm prioridade na curadoria.
-        </li>
-      </ul>
+      <p class="team-note">Na prática, o trabalho não seguiu uma divisão estritamente compartimentada: conceito, conteúdo e código foram discutidos e revisados coletivamente pelos três integrantes, com o GitHub como ferramenta de controle de versão e apoio à colaboração ao longo de todo o desenvolvimento.</p>
     </section>
   </main>
 

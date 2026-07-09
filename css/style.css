@@ -722,10 +722,39 @@ select.field {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
 }
 .team-card { padding: 24px; text-align: center; }
+
+/* Blocos de texto e cards informativos (página Sobre) */
+.prose { max-width: 760px; }
+.prose p { color: var(--text-secondary); margin-bottom: 16px; }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { color: var(--text-primary); font-weight: 600; }
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.info-card { padding: 24px; }
+.info-card h3 { font-size: 1.05rem; margin-bottom: 12px; }
+.info-card p { color: var(--text-secondary); font-size: 0.9rem; }
+.info-card ul { display: flex; flex-direction: column; gap: 8px; }
+.info-card li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding-left: 18px;
+  position: relative;
+}
+.info-card li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent-violet);
+}
+.team-note { color: var(--text-secondary); font-size: 0.92rem; max-width: 760px; margin-top: 24px; }
 .team-card img {
   width: 80px; height: 80px;
   border-radius: 50%;
